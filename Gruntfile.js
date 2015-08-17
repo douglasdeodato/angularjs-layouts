@@ -4,7 +4,6 @@
 
 	//all tasks that must be loaded.
 	var tasks = [
-			
 			'grunt-contrib-watch'
 			,'grunt-contrib-uglify'
 		
@@ -28,8 +27,6 @@
 		 	,tasks: ["dist"]
 		 }
 	}
-
-
 	
 
 	//Register custom tasks ===============================
