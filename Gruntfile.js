@@ -1,4 +1,4 @@
-	module.exports = function  (grunt) {
+	module.exports = function (grunt) {
 	var config = {};
 
 
@@ -6,33 +6,51 @@
 	var tasks = [
 			'grunt-contrib-watch'
 			,'grunt-contrib-uglify'
+			,'grunt-contrib-jade'
 		
 	];
 
 
 	//uglify ===============================
-		config.uglify = {dist: {
-			options: {sourceMap:"public/myapp.production.js.map"}
-			,files: {
-				"public/myapp.production.js": ["public/myapp.development.js"]
-			}
-		}}
+		
+			config.uglify = {dist: {
+				options: {sourceMap:"public/myapp.production.js.map"}
+				,files: {
+					"public/myapp.production.js": ["public/myapp.development.js"]
+				}
+			}}
 
 
 	//Watch ===============================
 
-	config.watch = {
-		 scripts: {
-		 	files: ["lib/**/*.js","scss/**/*.scss"]
-		 	,tasks: ["dist"]
-		 }
-	}
+			config.watch = {
+				 scripts: {
+				 	files: ["lib/**/*.js","sass/**/*.scss","jade/**/*.jade"]
+				 	,tasks: ["dist"]
+				 }
+			}
 	
+	//Jade ===============================
+			config.jade = {
+			        compile: {
+			            options: {
+			                client: false,
+			                pretty: true
+			            },
+			            files: [ {
+			              cwd: "jade/templates",
+			              src: "**/*.jade",
+			              dest: "",
+			              expand: true,
+			              ext: ".html"
+			            } ]
+			        }
+			    }
 
 	//Register custom tasks ===============================
-	grunt.registerTask('default',['dist']);
+	grunt.registerTask('default',['dev']);
 	//grunt.registerTask('dev',['jshint:dev','jasmine', 'concat:dev', 'sass:dev']);
-	grunt.registerTask('dist',['uglify']);
+	grunt.registerTask('dist',['uglify','jade']);
 
 
 	//General setup ===============================
