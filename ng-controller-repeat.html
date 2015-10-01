@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app='myApp' lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>angularjs</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src='public/javascripts/ng-controller.js'></script>
+  </head>
+  <body>
+                <table ng-controller="UsersListCtrl">
+                    <thead>
+                      <tr>
+                        <th>Username</th>
+                        <th>UserId</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="user in users | orderBy:'id' ">
+                        <td><strong>{{ user.name }}</strong></td>
+                        <td>{{ user.id }}</td>
+                      </tr>
+                    </tbody>
+                </table>
+                  <p>street list </p>
+
+                 <table ng-controller="StreetListCtrl">
+                    <thead>
+                      <tr>
+                        <th>street name</th>
+                        <th>id</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="data in street | orderBy:'id' ">
+                        <td><strong>{{ data.name }}</strong></td>
+                        <td>{{ data.id }}</td>
+                      </tr>
+                    </tbody>
+                </table>
+  </body>
+</html>
