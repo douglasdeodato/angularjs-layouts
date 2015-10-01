@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app='myApp' lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>angularjs</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src='public/javascripts/ng-show.js'></script>
+  </head>
+  <body>
+                 <div ng-controller="show_hide">
+                    <div ng-show="data.show"> If true the show otherwise hide. </div>
+                    <div ng-hide="!(data.hide)"> If true the show otherwise hide.</div>
+                 </div> 
+  </body>
+</html>

@@ -8,3 +8,5 @@ Download angular: https://angularjs.org/
  * ng-controller
  * ng-repeat
  * ng-bind
+ * ng-show
+ * ng-hide
