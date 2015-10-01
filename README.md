@@ -7,3 +7,4 @@ Download angular: https://angularjs.org/
  * ng-include
  * ng-controller
  * ng-repeat
+ * ng-bind
