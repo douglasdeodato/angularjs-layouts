@@ -10,3 +10,5 @@ Download angular: https://angularjs.org/
  * ng-bind
  * ng-show
  * ng-hide
+ * ng-click
+ * ng-href

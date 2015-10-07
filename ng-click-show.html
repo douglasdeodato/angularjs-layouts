@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="test">
+
+<head>
+     <script data-require="angular.js@*" data-semver="1.4.0-rc.0" src="https://code.angularjs.org/1.4.0-rc.0/angular.js"></script>
+   
+    
+
+     <script type="text/javascript">
+   angular.module('test',[])
+    .controller('MyCtrl',function ($scope) {
+      $scope.myText = 'Press to start';
+      $scope.start = function (myText) {
+          $scope.myText = (myText === 'Press to start') ? 'Finish' : 'Press to start';
+
+        
+      }
+});
+     </script>
+</head>
+
+<body ng-controller="MyCtrl">
+    <button ng-click="start(myText)"> {{ myText }} </button>
+
+   
+</body>

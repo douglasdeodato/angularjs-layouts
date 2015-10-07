@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app='plunker' lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>angularjs</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="public/javascripts/ng-click.js"></script>
+  </head>
+<body ng-controller="MainCtrl">
+    <p id='top'>Hello <span ng-bind='name'></span></p>
+    <span ng-bind='msg'></span>
+    <a ng-href='#here' ng-click='go()' >click me</a>
+    <div style='height:1000px'>
+
+      <a id='here'></a>
+
+    </div>
+     <h1>here</h1>
+
+     <a ng-href='#top' ng-click='back()'> back to top </a>
+     <span ng-bind='backmsg'></span>
+  </body>
+
+</html>
