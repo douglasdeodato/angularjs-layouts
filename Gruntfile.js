@@ -29,9 +29,9 @@
 	//uglify ===============================
 		
 			config.uglify = {dist: {
-				options: {sourceMap:"public/myapp.production.js.map"}
+				options: {sourceMap:"public/javascripts/myapp-controllers.dist.js.map"}
 				,files: {
-					"public/myapp.production.js": ["public/myapp.development.js"]
+					"public/javascripts/myapp-controllers.dist.js": ["public/javascripts/myapp-controllers.development.js"]
 				}
 			}}
 
