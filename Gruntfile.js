@@ -7,8 +7,23 @@
 			'grunt-contrib-watch'
 			,'grunt-contrib-uglify'
 			,'grunt-contrib-jade'
+			,'grunt-contrib-concat'
 		
 	];
+
+	//Concat ===============================
+		var concat;
+		config.concat = concat = {};
+
+		concat.dev = {
+			files: {
+				"public/javascripts/myapp-controllers.development.js": [
+					//for all"public/javascripts/**/*.js"
+/* just controllers */ "public/javascripts/controllers/**/*.js"
+				]
+			}
+		};
+
 
 
 	//uglify ===============================
@@ -48,7 +63,7 @@
 			    }
 
 	//Register custom tasks ===============================
-	grunt.registerTask('default',['dev']);
+	grunt.registerTask('default',['dev','concat']);
 	//grunt.registerTask('dev',['jshint:dev','jasmine', 'concat:dev', 'sass:dev']);
 	grunt.registerTask('dist',['uglify','jade']);
 
