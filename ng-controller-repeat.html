@@ -4,9 +4,28 @@
     <meta charset="utf-8">
     <title>angularjs</title>
     <script src="bower_components/angular/angular.min.js"></script>
-    <script src='public/javascripts/ng-controller.js'></script>
+    <script src='public/javascripts/main.js'></script>
+    <script src='public/javascripts/controllers/StreetListCtrl.js'></script>
+    <script src='public/javascripts/controllers/UsersListCtrl.js'></script>
+    <script src='public/javascripts/controllers/CitiesListCtrl.js'></script>
   </head>
   <body>
+   <table ng-controller="CitiesListCtrl">
+                    <thead>
+                      <tr>
+                        <th>Username</th>
+                        <th>City ID</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="user in cities | orderBy:'id' ">
+                        <td><strong>{{ user.name }}</strong></td>
+                        <td>{{ user.id }}</td>
+                      </tr>
+                    </tbody>
+                </table>
+
+
                 <table ng-controller="UsersListCtrl">
                     <thead>
                       <tr>
